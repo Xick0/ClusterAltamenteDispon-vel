@@ -1,5 +1,4 @@
-#!/bin/bash
-
+!/bin/bash
 # Instalar o mdadm
 sudo apt update && sudo apt install mdadm -y
 

@@ -1,0 +1,24 @@
+[Mon Dec 09 15:25:46.144406 2024] [mpm_prefork:notice] [pid 12948] AH00163: Apache/2.4.52 (Ubuntu) configured -- resuming normal operations
+[Mon Dec 09 15:25:46.144489 2024] [core:notice] [pid 12948] AH00094: Command line: '/usr/sbin/apache2'
+[Mon Dec 09 15:26:17.646914 2024] [mpm_prefork:notice] [pid 12948] AH00171: Graceful restart requested, doing restart
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.2.1. Set the 'ServerName' directive globally to suppress this message
+[Mon Dec 09 15:26:17.744236 2024] [mpm_prefork:notice] [pid 12948] AH00163: Apache/2.4.52 (Ubuntu) configured -- resuming normal operations
+[Mon Dec 09 15:26:17.744251 2024] [core:notice] [pid 12948] AH00094: Command line: '/usr/sbin/apache2'
+[Mon Dec 09 15:26:23.270652 2024] [mpm_prefork:notice] [pid 12948] AH00171: Graceful restart requested, doing restart
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.2.1. Set the 'ServerName' directive globally to suppress this message
+[Mon Dec 09 15:26:23.408960 2024] [mpm_prefork:notice] [pid 12948] AH00163: Apache/2.4.52 (Ubuntu) configured -- resuming normal operations
+[Mon Dec 09 15:26:23.408986 2024] [core:notice] [pid 12948] AH00094: Command line: '/usr/sbin/apache2'
+[Mon Dec 09 15:26:23.456710 2024] [mpm_prefork:notice] [pid 12948] AH00171: Graceful restart requested, doing restart
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.2.1. Set the 'ServerName' directive globally to suppress this message
+[Mon Dec 09 15:26:23.540737 2024] [mpm_prefork:notice] [pid 12948] AH00163: Apache/2.4.52 (Ubuntu) configured -- resuming normal operations
+[Mon Dec 09 15:26:23.540758 2024] [core:notice] [pid 12948] AH00094: Command line: '/usr/sbin/apache2'
+[Mon Dec 09 15:26:28.725040 2024] [mpm_prefork:notice] [pid 12948] AH00170: caught SIGWINCH, shutting down gracefully
+[Mon Dec 09 15:26:28.883178 2024] [mpm_prefork:notice] [pid 17298] AH00163: Apache/2.4.52 (Ubuntu) configured -- resuming normal operations
+[Mon Dec 09 15:26:28.883217 2024] [core:notice] [pid 17298] AH00094: Command line: '/usr/sbin/apache2'
+[Mon Dec 09 15:26:29.461248 2024] [mpm_prefork:notice] [pid 17298] AH00170: caught SIGWINCH, shutting down gracefully
+[Mon Dec 09 15:27:03.517631 2024] [mpm_prefork:notice] [pid 769] AH00163: Apache/2.4.52 (Ubuntu) configured -- resuming normal operations
+[Mon Dec 09 15:27:03.518254 2024] [core:notice] [pid 769] AH00094: Command line: '/usr/sbin/apache2'
+[Mon Dec 09 15:45:51.910594 2024] [php:warn] [pid 828] [client 192.168.91.151:38366] PHP Warning:  "continue" targeting switch is equivalent to "break" in /usr/share/ganglia-webfrontend/functions.php on line 732
+[Mon Dec 09 15:45:51.939604 2024] [php:error] [pid 828] [client 192.168.91.151:38366] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ganglia_api_error_handler(), 4 passed in /usr/share/ganglia-webfrontend/ganglia.php on line 353 and exactly 5 expected in /usr/share/ganglia-webfrontend/lib/common_api.php:18\nStack trace:\n#0 /usr/share/ganglia-webfrontend/ganglia.php(353): ganglia_api_error_handler()\n#1 /usr/share/ganglia-webfrontend/get_ganglia.php(11): Gmetad()\n#2 /usr/share/ganglia-webfrontend/index.php(7): include_once('...')\n#3 {main}\n  thrown in /usr/share/ganglia-webfrontend/lib/common_api.php on line 18
+[Mon Dec 09 15:45:53.490976 2024] [php:error] [pid 830] [client 192.168.91.151:38382] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ganglia_api_error_handler(), 4 passed in /usr/share/ganglia-webfrontend/ganglia.php on line 353 and exactly 5 expected in /usr/share/ganglia-webfrontend/lib/common_api.php:18\nStack trace:\n#0 /usr/share/ganglia-webfrontend/ganglia.php(353): ganglia_api_error_handler()\n#1 /usr/share/ganglia-webfrontend/get_ganglia.php(11): Gmetad()\n#2 /usr/share/ganglia-webfrontend/index.php(7): include_once('...')\n#3 {main}\n  thrown in /usr/share/ganglia-webfrontend/lib/common_api.php on line 18
+[Mon Dec 09 15:46:29.649439 2024] [php:error] [pid 829] [client 192.168.91.151:53152] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function ganglia_api_error_handler(), 4 passed in /usr/share/ganglia-webfrontend/ganglia.php on line 353 and exactly 5 expected in /usr/share/ganglia-webfrontend/lib/common_api.php:18\nStack trace:\n#0 /usr/share/ganglia-webfrontend/ganglia.php(353): ganglia_api_error_handler()\n#1 /usr/share/ganglia-webfrontend/get_ganglia.php(11): Gmetad()\n#2 /usr/share/ganglia-webfrontend/index.php(7): include_once('...')\n#3 {main}\n  thrown in /usr/share/ganglia-webfrontend/lib/common_api.php on line 18

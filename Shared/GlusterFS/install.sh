@@ -1,7 +1,6 @@
-#!/bin/bash
+!/bin/bash
 
-# Atualizar os repositórios e instalar o GlusterFS
-sudo apt update
+# Instalar o GlusterFS
 sudo apt install -y glusterfs-server
 
 # Iniciar e habilitar o serviço GlusterFS

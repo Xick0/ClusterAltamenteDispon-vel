@@ -23,7 +23,8 @@ Vagrant.configure("2") do |config|
       bash /shared/Web/raid_SetUp.sh
       bash /shared/GlusterFS/install.sh
       bash /shared/General/updateHosts.sh
-      bash /shared/Web/nginxWeb1.sh
+      bash /shared/Web/nginxWeb.sh
+      bash /shared/General/cacti.sh
       sudo reboot
     SHELL
   end
@@ -49,7 +50,8 @@ Vagrant.configure("2") do |config|
       bash /shared/Web/raid_SetUp.sh
       bash /shared/GlusterFS/install.sh
       bash /shared/General/updateHosts.sh
-      bash /shared/Web/nginxWeb2.sh
+      bash /shared/Web/nginxWeb.sh
+      bash /shared/General/cacti.sh
       sudo reboot
     SHELL
   end
@@ -71,6 +73,7 @@ Vagrant.configure("2") do |config|
       bash /shared/General/systemUpdate.sh
       bash /shared/General/updateHosts.sh
       bash /shared/Glusterfs/sql.sh
+      bash /shared/General/cacti.sh
       sudo reboot
     SHELL
   end
@@ -91,6 +94,7 @@ Vagrant.configure("2") do |config|
       bash /shared/General/systemUpdate.sh
       bash /shared/General/updateHosts.sh
       bash /shared/Glusterfs/sql.sh
+      bash /shared/General/cacti.sh
       sudo reboot
     SHELL
   end
@@ -112,6 +116,7 @@ Vagrant.configure("2") do |config|
       bash /shared/General/systemUpdate.sh
       bash /shared/General/updateHosts.sh
       bash /shared/Proxy/install.sh
+      bash /shared/General/cacti.sh
       sudo reboot
     SHELL
   end
@@ -134,18 +139,48 @@ Vagrant.configure("2") do |config|
       bash /shared/General/systemUpdate.sh
       bash /shared/General/updateHosts.sh
       bash /shared/Proxy/install.sh
+      bash /shared/General/cacti.sh
       sudo reboot
     SHELL
   end
 
-  # config.vm.provision "shell", inline: <<-SHELL, run: "always"
-  #   # Run this only on web1V2
-  #   if [ "$(hostname)" == "web1" ]; then
-  #     bash /shared/GlusterFS/volumeCreation.sh
-  #     bash /shared/GlusterFS/mountWeb1.sh
-  #   fi
-  #   if [ "$(hostname)" == "web2" ]; then
-  #     bash /shared/GlusterFS/mountWeb2.sh
-  #   fi
-  # SHELL
+  config.vm.define "cacti" do |cacti|
+    cacti.vm.synced_folder "./Shared", "/shared"
+    cacti.vm.box = "ubuntu/jammy64"
+    cacti.vm.hostname = "cacti"
+    cacti.vm.network "private_network", ip: "192.168.91.150"
+
+    cacti.vm.provider "virtualbox" do |vb|
+      vb.name = "cacti"
+      vb.memory = 2048
+      vb.cpus = 2
+    end
+
+    cacti.vm.provision "shell", inline: <<-SHELL
+      chmod +x /vagrant/*.sh
+      bash /shared/General/systemUpdate.sh
+      # bash /shared/Cacti/cacti.sh
+      sudo reboot
+    SHELL
+  end
+
+  config.vm.define "ganglia" do |ganglia|
+    ganglia.vm.synced_folder "./Shared", "/shared"
+    ganglia.vm.box = "ubuntu/jammy64"
+    ganglia.vm.hostname = "ganglia"
+    ganglia.vm.network "private_network", ip: "192.168.91.152"
+
+    ganglia.vm.provider "virtualbox" do |vb|
+      vb.name = "ganglia"
+      vb.memory = 2048
+      vb.cpus = 2
+    end
+
+    ganglia.vm.provision "shell", inline: <<-SHELL
+      chmod +x /vagrant/*.sh
+      bash /shared/General/systemUpdate.sh
+      bash /shared/Cacti/ganglia.sh
+      sudo reboot
+    SHELL
+  end
 end
