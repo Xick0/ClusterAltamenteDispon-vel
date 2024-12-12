@@ -25,14 +25,13 @@ This project demonstrates the setup of a highly available, fault-tolerant, and l
 ### Recommended Setup
 
 - At least 16 GB of RAM and a quad-core processor for hosting multiple virtual machines
-- Stable internet connection for downloading dependencies
 
 ## Installation
 
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/your-repo/vagrant-cluster.git
+git clone https://github.com/Xick0/vagrant-cluster.git
 cd vagrant-cluster
 ```
 
